@@ -14,5 +14,12 @@ const automationSlice = createSlice({
 export const selectAllAutomations = (state: RootState) => state.automations;
 export const selectAutomationById = (state: RootState, id: number) =>
   state.automations.find((automation) => Number(automation.id) == Number(id));
+export const selectAutomationSites = (state: RootState) => [
+  ...new Set(
+    state.automations
+      .map((automation) => automation.sites.map((item) => item.title))
+      .flat()
+  ),
+];
 
 export default automationSlice.reducer;
