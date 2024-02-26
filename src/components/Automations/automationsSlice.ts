@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 
 import data from "../../app/db.json";
-import { Automation } from "./types";
+import { Automation } from "../../types";
 
 const initialState: Array<Automation> = data.data.oneClickAutomations.items;
 const automationSlice = createSlice({

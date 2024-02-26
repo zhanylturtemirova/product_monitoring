@@ -1,12 +1,10 @@
 import "./App.css";
-import SitesFilter from "./components/Filter/SitesFilter";
-import AutomationsList from "./features/Automations/AutomationsList";
+import AutomationPage from "./pages/AutomationsPage/AutomationPage";
 
 function App() {
   return (
     <>
-      <SitesFilter />
-      <AutomationsList />
+      <AutomationPage />
     </>
   );
 }

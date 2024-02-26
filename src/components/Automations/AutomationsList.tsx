@@ -1,10 +1,8 @@
-import { selectAllAutomations } from "./automationsSlice";
-import { useAppSelector } from "../../app/hooks";
 import AutomationItem from "./AutomationItem";
 import classes from "./style.module.scss";
+import { Automation } from "../../types";
 
-function AutomationsList() {
-  const automations = useAppSelector(selectAllAutomations);
+function AutomationsList({ automations }: { automations: Automation[] }) {
   const renderedAutomations = automations.map((item) => (
     <AutomationItem automation={item} key={item.id} />
   ));

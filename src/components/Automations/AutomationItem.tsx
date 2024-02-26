@@ -1,4 +1,4 @@
-import { Automation } from "./types";
+import { Automation } from "../../types";
 import classes from "./style.module.scss";
 
 function AutomationItem({ automation }: { automation: Automation }) {

@@ -44,7 +44,6 @@ const MultiSelectDropdown = ({
       option.toString().toLowerCase().includes(searchItem.toLowerCase())
     );
   }
-  console.log("results", results);
   return (
     <div ref={ref}>
       <div className={classes.dropdown}>
@@ -80,11 +79,14 @@ const MultiSelectDropdown = ({
                   <li
                     className={classes.dropdown__option}
                     onClick={() => toggleOption(option)}
+                    key={option}
                   >
                     <input
                       type="checkbox"
+                      key={option}
                       checked={isSelected}
                       className={classes.option_checkbox}
+                      onChange={() => toggleOption(option)}
                     ></input>
                     <span>{option}</span>
                   </li>

@@ -1,0 +1,25 @@
+$dropdown_border_color: #eee;
+$dropdown_bg_selected: rgb(236, 216, 247);
+$dropdown_color_selected: #9703f3;
+
+.filter_wrapper {
+  display: flex;
+}
+.selected_item {
+  background-color: $dropdown_bg_selected;
+  color: $dropdown_color_selected;
+  border: solid 1px $dropdown_color_selected;
+  font-size: 14px;
+  border-radius: 999px;
+  padding: 5px 25px;
+  display: flex;
+  align-items: center;
+
+  span {
+    padding-right: 10px;
+  }
+  img {
+    width: 10px;
+    height: 10px;
+  }
+}
