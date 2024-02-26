@@ -14,15 +14,15 @@ const SitesFilter = ({
   const [selected, setSelected] = useState<string[] | []>([]);
   const toggleOption = (option: string) => {
     setSelected((prevSelected) => {
-      const newArray = [...prevSelected];
+      let newArray = [...prevSelected];
       if (newArray.includes(option)) {
-        return newArray.filter((item) => item !== option);
+        newArray = newArray.filter((item) => item !== option);
       } else {
         newArray.push(option);
-        return newArray;
       }
+      sitesFilterToggle(newArray);
+      return newArray;
     });
-    sitesFilterToggle(selected);
   };
 
   const selectedSites =
@@ -43,13 +43,12 @@ const SitesFilter = ({
         if (newArray.includes(selectedItem)) {
           newArray = newArray.filter((item) => item !== selectedItem);
         }
+        sitesFilterToggle(newArray);
         return newArray;
       });
-      sitesFilterToggle(selected);
     },
     [selected]
   );
-  console.log("selected", selected);
   return (
     <div className={classes.filter_wrapper}>
       <MultiSelectDropdown

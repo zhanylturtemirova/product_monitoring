@@ -21,17 +21,17 @@ function AutomationPage() {
     [selectedSites, automations]
   );
 
-  if (selectedSites.length > 0) {
-    // const results1 = automations.filter((automation) => {
-    //   const automationSites: string[] = automation.sites.map(
-    //     (item) => item.slug
-    //   );
-    //   const filteredArray: string[] = selectedSites.filter((item) => {
-    //     return automationSites.indexOf(item) !== -1;
-    //   });
-    //   return filteredArray.length > 0;
-    // });
-    // console.log("results1", results1);
+  if (selectedSites.length >= 1) {
+    results = [];
+    let tempSites: string[] | [] = [];
+    for (let i = 0; i < automations.length; i++) {
+      tempSites = automations[i].sites.map((item) => item.title);
+      for (let y = 0; y < tempSites.length; y++) {
+        if (selectedSites.indexOf(tempSites[y] as never) !== -1) {
+          results.push(automations[i]);
+        }
+      }
+    }
   }
   return (
     <>
