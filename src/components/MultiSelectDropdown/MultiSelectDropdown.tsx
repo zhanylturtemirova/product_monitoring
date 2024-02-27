@@ -56,7 +56,7 @@ const MultiSelectDropdown = ({
             className={classes.dropdown__img}
             alt="dropdown sign"
           />
-          <div>{title}</div>
+          <span>{title}</span>
         </div>
         {isOpen && (
           <ul className={classes.dropdown__options}>

@@ -1,11 +1,11 @@
-$dropdown_width: 170px;
+$dropdown__max_width: 185px;
 $dropdown_options_width: 250px;
 $dropdown_options_height: 200px;
 $dropdown_border_color: #eee;
 
 .dropdown {
   position: relative;
-  width: $dropdown_width;
+  width: max-content;
   border-radius: 15%;
 
   .dropdown__selected {
@@ -19,10 +19,10 @@ $dropdown_border_color: #eee;
 
     > img {
       height: 18px;
+      margin-right: 5px;
     }
   }
   .dropdown__options {
-    // display: none;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     overflow-y: scroll;

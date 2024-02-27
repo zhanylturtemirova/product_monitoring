@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import automationsReducer from "../components/Automations/automationsSlice";
+import automationsReducer from "./automationsSlice";
 
 export const store = configureStore({
   reducer: { automations: automationsReducer },

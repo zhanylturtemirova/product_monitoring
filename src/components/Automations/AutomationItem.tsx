@@ -1,7 +1,8 @@
 import { Automation } from "../../types";
 import classes from "./style.module.scss";
+import { memo } from "react";
 
-function AutomationItem({ automation }: { automation: Automation }) {
+const AutomationItem = memo(({ automation }: { automation: Automation }) => {
   const logo = automation.sites[0].logoSmall2x;
   const title = automation.title;
   const description = automation.shortDescription;
@@ -12,6 +13,6 @@ function AutomationItem({ automation }: { automation: Automation }) {
       <p className={classes.description}>{description}</p>
     </div>
   );
-}
+});
 
 export default AutomationItem;

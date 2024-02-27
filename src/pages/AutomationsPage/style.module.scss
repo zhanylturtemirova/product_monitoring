@@ -43,8 +43,10 @@ $filter_width: 1260px;
   }
 }
 .filters_items {
+  display: flex;
   width: $filter_width;
   margin-left: 30px;
+  align-items: center;
 }
 .content {
   padding-top: 40px;
