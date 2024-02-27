@@ -4,6 +4,8 @@ import SitesFilter from "../../components/Filter/SitesFilter";
 import classes from "./style.module.scss";
 import { useAppSelector } from "../../app/hooks";
 import { selectAllAutomations } from "../../components/Automations/automationsSlice";
+import left from "../../assets/left.svg";
+import right from "../../assets/right.svg";
 
 function AutomationPage() {
   const automations = useAppSelector(selectAllAutomations);
@@ -35,10 +37,22 @@ function AutomationPage() {
   }
   return (
     <>
-      <div className={classes.filters}>
-        <SitesFilter sitesFilterToggle={handleSitesFilterToggle} />
+      <div className={classes.filters_wrapper}>
+        <div className={classes.filters_items_wrapper}>
+          <div className={classes.left}>
+            <img src={left} alt="arrow left" />
+          </div>
+          <div className={classes.filters_items}>
+            <SitesFilter sitesFilterToggle={handleSitesFilterToggle} />
+          </div>
+          <div className={classes.right}>
+            <img src={right} alt="arrow right" />
+          </div>
+        </div>
       </div>
-      <AutomationsList automations={results} />
+      <div className={classes.content}>
+        <AutomationsList automations={results} />
+      </div>
     </>
   );
 }

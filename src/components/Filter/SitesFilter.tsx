@@ -57,7 +57,9 @@ const SitesFilter = ({
         selected={selected}
         toggleOption={toggleOption}
       />
-      {selectedSites && selectedSites}
+      <div className={classes.filter_scroll}>
+        {selectedSites && selectedSites}
+      </div>
     </div>
   );
 };
